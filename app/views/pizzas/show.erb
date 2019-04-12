@@ -1,0 +1,6 @@
+<h1><%= @pizza.name %>, from <em> <%= @pizza.restaurant.name %> </em></h1>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>

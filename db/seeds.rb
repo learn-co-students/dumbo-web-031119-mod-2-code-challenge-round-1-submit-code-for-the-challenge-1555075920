@@ -8,7 +8,8 @@
 #
 #   1
 Restaurant.destroy_all
- 
+Pizza.destroy_all
+
 Restaurant.create!([{
   name: "Sottocasa NYC",
   address: "298 Atlantic Ave, Brooklyn, NY 11201",
@@ -21,3 +22,12 @@ Restaurant.create!([{
   name: "San Matteo NYC",
   address: "1559 2nd Ave, New York, NY 10028"
 }])
+
+Pizza.create(restaurant: Restaurant.first, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
+Pizza.create(restaurant: Restaurant.first, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
+
+Pizza.create(restaurant: Restaurant.second, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
+Pizza.create(restaurant: Restaurant.second, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
+
+Pizza.create(restaurant: Restaurant.third, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
+Pizza.create(restaurant: Restaurant.third, name: "#{Faker::Food.dish} Pizza", ingredients: "#{Faker::Food.ingredient}, #{Faker::Food.ingredient}, #{Faker::Food.ingredient}")
