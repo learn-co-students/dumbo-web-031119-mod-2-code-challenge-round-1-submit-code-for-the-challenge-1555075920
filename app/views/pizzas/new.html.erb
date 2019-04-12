@@ -1,0 +1,16 @@
+<h1>Create New Pizza</h1>
+<%if @pizza.errors.any? do%>
+    <%@pizza.errors.full_messages.each do |m|%>
+        <li><font color="red"><%="ERROR: #{m}."%></font></li>
+    <%end%>
+<%end%>
+<%end%>
+<br>
+<%=form_for @pizza do |p|%>
+<%=p.label :name%>
+<%=p.text_field :name%>
+<%=p.label :ingredients%>
+<%=p.text_area :ingredients, placeholder:"Please enter your ingredients on separate lines.\nExample:\nSauce\nCheese\nChicken", rows:"10"%>
+<%=p.collection_select(:restaurant_id, Restaurant.all, :id, :name)%>
+<%=p.submit%>
+<%end%>
