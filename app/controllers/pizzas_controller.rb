@@ -13,7 +13,6 @@ class PizzasController < ApplicationController
       if @pizza.save 
         redirect_to pizza_path(@pizza)
       else 
-        @restaurant = Restaurant.all
         render 'new'
     end  
   end   
