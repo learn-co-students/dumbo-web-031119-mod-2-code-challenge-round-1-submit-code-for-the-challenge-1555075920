@@ -1,0 +1,22 @@
+<h1>Create a new Pizza</h1>
+
+<ul>
+<% if @pizza.errors.any? %>
+    <% @pizza.errors.full_messages do |msg|%>
+    <li><%= msg %></li>
+    <% end%>
+ <% end  %>   
+</ul>
+
+
+<%= form_for @pizza do |f|%>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+
+    <%= f.label :ingredients%>
+    <%= f.text_area :ingredients%>
+
+    <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name)%>
+
+    <%= f.submit "create pizza"%>
+<%end%>
