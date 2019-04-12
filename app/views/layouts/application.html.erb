@@ -12,6 +12,9 @@
     <div class='container'>
       <p align="center"><%= image_tag "prisoners_pizza.png", class: "pizza_logo"%></p>
       <h1 align='center' style='font-size:3rem;color:#d12b15'>The NYC Pizza Society</h1>
+      <p><%=link_to "Restaurant Index", restaurants_path %></p>
+      <p><%=link_to "Pizza Index", pizzas_path %></p>
+      <p><%=link_to "New Pizza", new_pizza_path %></p>
       <%= yield %>
     </div>
   </body>
