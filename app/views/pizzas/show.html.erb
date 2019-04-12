@@ -1,0 +1,24 @@
+<h1> <%= @pizza.name %> pizza </h1>
+
+ingredients:
+<br>
+<%= @pizza.ingredients %>
+<br>
+Pizza Shop:
+<br>
+<%= link_to @pizza.restaurant.name, restaurant_path(@pizza.restaurant) %>
+<br>
+Location:<br>
+<%= @pizza.restaurant.address %>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+  <%= link_to "back to pizza list", pizzas_path %>
+</footer>

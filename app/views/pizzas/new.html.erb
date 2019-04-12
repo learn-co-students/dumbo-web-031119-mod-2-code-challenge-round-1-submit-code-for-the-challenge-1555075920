@@ -1,0 +1,26 @@
+
+<% if @pizza.errors.any? %>
+<div style="color:red">
+  SORRY!
+<% @pizza.errors.full_messages.each do |error| %>
+
+  <%= error %>
+
+<% end %>
+try again!
+</div>
+<% end %>
+
+
+<%= form_for @pizza do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :ingredients %>
+<%= f.text_field :ingredients %>
+<br>
+<%= f.label :restaurant %>
+<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+<br>
+<%= f.submit %>
+<% end %>
