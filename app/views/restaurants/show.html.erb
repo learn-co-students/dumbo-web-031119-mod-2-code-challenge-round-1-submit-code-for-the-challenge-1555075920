@@ -1,0 +1,24 @@
+
+<h1> <%= @restaurant.name %>  </h1>
+<br>
+ADDRESS: <%= @restaurant.address %>
+
+
+
+
+
+
+<br>
+<br>
+<h2>PIZZAS AT THIS LOCATION:</h2>
+<br>
+<ul>
+
+  <% @restaurant.pizzas.each do |pizza| %>
+  <li>
+    <%= pizza.name %>
+  </li>
+  <% end %>
+
+</ul>
+<%= link_to "Restaurant Index", restaurants_path %>
