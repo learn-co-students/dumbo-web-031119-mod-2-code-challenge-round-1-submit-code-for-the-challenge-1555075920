@@ -1,0 +1,6 @@
+<%= content_tag :h1,@pizza.name%><br
+<%= content_tag :p,"Ingredients: #{@pizza.ingredients}"%><br>
+<%= content_tag :p,"This slice is available at: "%>
+<%= link_to @pizza.restaurant.name, @pizza.restaurant%><br>
+
+<%= button_to "edit #{@pizza.name}", edit_pizza_path, method: :get%>

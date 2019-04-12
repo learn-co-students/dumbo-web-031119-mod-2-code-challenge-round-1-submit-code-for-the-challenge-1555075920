@@ -1,0 +1,13 @@
+<%= content_tag :h1,@restaurant.name%><br>
+<%= content_tag :h2,@restaurant.address%><br>
+<% if @pizzas.empty? %>
+<%= content_tag :p,"This Restaurant has no pizzas, quite odd." %>
+<% else %>
+<ul>
+  <% @pizzas.each do |pizza| %>
+    <li>
+      <%= link_to pizza.name, pizza %>
+    </li>
+    <%end%>
+  </ul
+<%end%>
