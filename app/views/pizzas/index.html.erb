@@ -1,8 +1,20 @@
-<h1 style='margin-top:100px;font-size:2rem'>Our official pizza directory</h1>
-
+ <h1 style='margin-top:100px;font-size:2rem'>Our official pizza directory</h1>
+<ul>
+  <% if @pizzas.empty?%>
+  <%=content_tag :p,"There are no pizzas :("%>
+  <%else%>
 <% @pizzas.each do |pizza| %>
-  <h1 style='font-size:1.5rem;margin-top:50px'>Pizza Name:
-      <%= pizza.name %>
-  </h1>
-  <p>Ingredients: <%= pizza.ingredients %></p>
-<% end %>
+<li>
+  <%=link_to "#{pizza.name} @ #{pizza.restaurant.name}", pizza%>
+  </li>
+    <%end%>
+  </ul>
+  <%end%>
+
+  <%=button_to "create pizza", new_pizza_path, method: :get%><br>
+  <%=button_to "Restaurant Index", restaurants_path, method: :get%><br>
+
+  <%= form_for :pizza do|f| %>
+    <%= f.text_field :pizza_name, placeholder: "Enter a Pizza" %>
+    <%= f.submit 'Find that pizza', pizza_path, method: :post %>
+  <% end %>

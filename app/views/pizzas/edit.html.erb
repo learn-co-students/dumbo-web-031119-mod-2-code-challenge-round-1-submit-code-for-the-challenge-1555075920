@@ -1,0 +1,14 @@
+<% if @pizza.errors.any?%>
+<% @pizza.errors.full_messages.each do |message|%>
+<%=content_tag :p, message%>
+<% end %>
+<% end %>
+
+<%=form_for @pizza do |f|%>
+<%=f.label :name,"pizza name"%>
+<%=f.text_field :name%>
+<%=f.label :ingredients,"ingredients"%>
+<%=f.text_field :ingredients%>
+<%=f.collection_select :restaurant_id,@restaurants,:id,:name%>
+<%=f.submit%>
+<%end%>
