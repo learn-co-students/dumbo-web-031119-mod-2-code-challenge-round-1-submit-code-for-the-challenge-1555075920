@@ -1,8 +1,13 @@
 <h1 style='margin-top:100px;font-size:2rem'>Our official pizza directory</h1>
 
 <% @pizzas.each do |pizza| %>
-  <h1 style='font-size:1.5rem;margin-top:50px'>Pizza Name:
-      <%= pizza.name %>
-  </h1>
-  <p>Ingredients: <%= pizza.ingredients %></p>
+<h1 style='font-size:1.5rem;margin-top:50px'>Pizza Name:
+  <%= link_to pizza.name, pizza_path(pizza) %>
+</h1>
+<p>Ingredients: <%= pizza.ingredients %></p>
 <% end %>
+
+
+<%= link_to "Create Pizza", new_pizza_path %>
+<br>
+<%= link_to "Restaurant Index", restaurants_path %>

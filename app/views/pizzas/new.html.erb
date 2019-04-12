@@ -1,0 +1,22 @@
+
+<% @pizza.errors.full_messages.each do |error| %>
+
+<%= error %>
+
+<% end %>
+
+
+<h1>LETS MAKE A PIZZA</h1>
+
+
+<%= form_for @pizza do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :ingredients %>
+<%= f.text_field :ingredients %>
+
+<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+<%= f.submit %>
+<% end %>
+<%= link_to "Pizza Index", pizzas_path %>
