@@ -21,3 +21,9 @@ Restaurant.create!([{
   name: "San Matteo NYC",
   address: "1559 2nd Ave, New York, NY 10028"
 }])
+
+
+Pizza.create(name: "Good", ingredients: "Tomato, Mozza", restaurant_id: Restaurant.pluck(:id).sample )
+Pizza.create(name: "Good", ingredients: "Tomato, Mo", restaurant_id: Restaurant.pluck(:id).sample)
+Pizza.create(name: "Good", ingredients: "Tomato, Moz", restaurant_id: Restaurant.pluck(:id).sample)
+
