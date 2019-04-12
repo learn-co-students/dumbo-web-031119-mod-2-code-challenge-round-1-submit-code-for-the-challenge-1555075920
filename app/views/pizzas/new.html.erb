@@ -1,0 +1,12 @@
+<h1 style='margin-top:100px;font-size:2rem'> Create Your Own Pizza </h1>
+
+<%= form_for @pizza do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :ingredients %><br>
+    <%= f.text_field :ingredients %><br>
+
+    <%= f.collection_select(:restaurant_id, @restaurants, :id, :name) %>
+    
+    <%= f.submit %>
+<% end %>
