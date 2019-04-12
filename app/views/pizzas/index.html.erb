@@ -5,4 +5,8 @@
       <%= pizza.name %>
   </h1>
   <p>Ingredients: <%= pizza.ingredients %></p>
+
+  <h1> This pizza belongs to: <%=link_to pizza.restaurant.name, restaurant_path(pizza.restaurant)%> </h1>
 <% end %>
+
+<%= link_to "Create New Pizza", new_pizza_path%>
